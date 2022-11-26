@@ -1,26 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-:focus, :active {
+:focus,
+:active {
   outline: none;
 }
 
-a:focus, a:active {
+a:focus,
+a:active {
   outline: none;
 }
 
-nav, footer, header, aside {
+nav,
+footer,
+header,
+aside {
   display: block;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -31,7 +40,9 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   font-family: inherit;
 }
 
@@ -48,7 +59,8 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
 }
 
@@ -64,7 +76,12 @@ img {
   vertical-align: top;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -82,7 +99,34 @@ body {
   margin-top: 140px;
   width: 100%;
   min-height: 400px;
+  padding: 77px 178px 77px 254px;
   background: #ffffff;
   box-shadow: 0px 4px 40px #8ca4d8;
   border-radius: 30px;
+}
+
+.search {
+  min-width: 231px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  transition: all 1s ease 0s;
+}
+
+.search-icon {
+  width: 16px;
+  height: 15px;
+  background: url(../img/icon/search-icon.svg) 100% no-repeat;
+  margin-right: 15px;
+}
+
+.search-input {
+  font-family: "Montserrat";
+  font-weight: 400;
+  width: 250px;
+  transition: all 1s ease 0s;
+}
+.search-input:focus {
+  width: 500px;
+  border-bottom: 1px solid #5b63a9;
 }
