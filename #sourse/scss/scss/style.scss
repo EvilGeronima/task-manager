@@ -34,11 +34,11 @@ body {
   width: 16px;
   height: 15px;
   background: url(../img/icon/search-icon.svg) 100% no-repeat;
-
-  margin-right: 15px;
 }
 
 .search-input {
+  margin-left: 15px;
+
   font-family: "Montserrat";
   font-weight: 400;
   text-align: left;
@@ -65,6 +65,8 @@ body {
 .summary {
   margin-left: 13px;
   margin-top: 57px;
+
+  display: flex;
 }
 
 .tittle {
@@ -79,4 +81,19 @@ body {
 }
 
 .counter {
+}
+
+.add-new-task {
+  margin-left: 20px;
+  padding-left: 20px;
+  width: 139px;
+  height: 34px;
+
+  background: #884cb2 url(../img/icon/button-add-task.svg) 30px 50% no-repeat;
+  border-radius: 10px;
+
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 12px;
+  color: #ffffff;
 }
