@@ -28,8 +28,6 @@ body {
 
   display: flex;
   align-items: center;
-
-  transition: all 1s ease 0s;
 }
 
 .search-icon {
@@ -43,14 +41,42 @@ body {
 .search-input {
   font-family: "Montserrat";
   font-weight: 400;
+  text-align: left;
 
-  width: 250px;
+  padding-left: 0px;
+
+  width: 217px;
+  border-bottom: 0px solid #fff;
 
   transition: all 1s ease 0s;
 
   &:focus {
+    text-align: center;
     width: 500px;
 
     border-bottom: 1px solid #5b63a9;
   }
+
+  &::placeholder {
+    color: #90a0b7;
+  }
+}
+
+.summary {
+  margin-left: 13px;
+  margin-top: 57px;
+}
+
+.tittle {
+  font-family: "Poppins";
+  font-size: 36px;
+  font-weight: 700;
+  color: #1d262c;
+}
+
+.tittle__color {
+  color: #f3477a;
+}
+
+.counter {
 }
