@@ -1,47 +1,25 @@
-const render = () => {
-	let test1 = 'Evaluate the addition and deletion of user IDs.'
-	let test2 = 'Pending'
-	let test3 = 'Minor'
+
+type Store = {
+	cards: { text: string }[]
+}
+
+const store: Store = {
+	cards: [
+
+	]
+}
+
+
+const renderButton = () => {
 
 	const buttonAddTask = document.querySelector('.add-new-task')
 
 	buttonAddTask?.addEventListener('click', () => {
-		let addTask = document.createElement("div")
-		addTask.innerHTML =
+		store.cards.push({ text: Date.now().toString() })
 
-			`<div class="task">
-	        <div class="task__name-new"></div>
-	        <div class="task__status-new"></div>
-	        <div class="task__priority-new"></div>
-	        <button class="change__task"></button>
-		</div>`
-
-		let myNewTask = document.querySelector('.completed')
-		let positionNewTask = myNewTask?.parentNode
-
-		positionNewTask?.insertBefore(addTask, myNewTask)
-
-		const taskName = document.querySelector('.task__name-new')
-		const taskStatus = document.querySelector('.task__status-new')
-		const taskPriority = document.querySelector('.task__priority-new')
-
-		if (!taskName || !taskStatus || !taskPriority) {
-			console.log('We have not this element')
-			return
-		}
-		taskName.textContent = test1
-		taskStatus.textContent = test2
-		taskPriority.textContent = test3
-
-		taskName.className = 'task__name'
-		taskStatus.className = 'task__status'
-		taskPriority.className = 'task__priority'
+		renderCards()
 	})
 }
-
-
-
-
 const renderInput = () => {
 
 	const findId = document.querySelector('.search')
@@ -51,10 +29,53 @@ const renderInput = () => {
         	<div class="search-icon"></div>
 
         	<input type="text" class="search-input" placeholder="Search for any training you want">
- 	 
+			 	 
 		`
 
 }
 
-render()
+const renderCards = () => {
+
+	let test1 = 'Evaluate the addition and deletion of user IDs.'
+	let test2 = 'Pending'
+	let test3 = 'Minor'
+
+	const findCurrently = document.querySelector('.currently')
+	findCurrently!!.innerHTML = ''
+
+
+	store.cards.map((card) => {
+		let addTask = document.createElement("div")
+		addTask.innerHTML =
+
+			`
+		<div class="task">
+	        <div class="task__name-new">${card.text}</div>
+	        <div class="task__status-new">${test2}</div>
+	        <div class="task__priority-new">${test3}</div>
+	        <button class="change__task"></button>
+		</div>
+		`
+
+		findCurrently?.appendChild(addTask)
+
+		const taskName = document.querySelector('.task__name-new')
+		const taskStatus = document.querySelector('.task__status-new')
+		const taskPriority = document.querySelector('.task__priority-new')
+
+		if (!taskName || !taskStatus || !taskPriority) {
+			console.log('We have not this element')
+			return
+		}
+
+		taskName.className = 'task__name'
+		taskStatus.className = 'task__status'
+		taskPriority.className = 'task__priority'
+	})
+
+}
+
+
 renderInput()
+renderButton()
+renderCards()
